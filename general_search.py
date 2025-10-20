@@ -179,4 +179,4 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     if search_filter == 'schools':
         return_docs.sort(key=lambda x: (x.get('rank') is None, -(x.get('rank') or 0)))
 
-    return return_docs, generated_school_ids, generated_program_ids, content
+    return return_docs, generated_school_ids, generated_program_ids
