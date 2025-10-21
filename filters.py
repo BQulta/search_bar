@@ -14,11 +14,6 @@ def exclude_ids(school_ids, program_ids):
     else:
         return {}  
 
-
-
-
-
-
 def not_exclude_ids(school_ids, program_ids):
     filter_conditions = []
     
@@ -35,13 +30,134 @@ def not_exclude_ids(school_ids, program_ids):
     else:
         return {}
 
+def range_filter_statement(key_name, min_value, max_value):
+    return {"$and": [{key_name:{"$lte":max_value}},{key_name: {"$gte":min_value}}]}
 
-def numeric_filter():
-    pass
+def equal_filter(key, value):
+    return {key: {"$eq":value}}
 
+def text_filter(key, value):
+    return {"where_document": {"$regex": f"(?i){key}.*{value}"}}
 
-def text_filter():
-    pass
-
-
-
+def filters(filter_statements):
+    filter_conditions = []
+    
+    grouped_filters = {}
+    
+    for filter_statement in filter_statements:
+        for key, value in filter_statement.items():
+            if key not in grouped_filters:
+                grouped_filters[key] = []
+            grouped_filters[key].append(value)
+    
+    # Process each category
+    for category, values in grouped_filters.items():
+        if category == 'program_type':
+            if len(values) == 1:
+                filter_conditions.append(equal_filter('program_type', values[0]))
+            else:
+                or_conditions = [equal_filter('program_type', val) for val in values]
+                filter_conditions.append({"$or": or_conditions})
+        
+        elif category == 'duration':
+            if len(values) == 1:
+                filter_conditions.append(equal_filter('duration', values[0]))
+            else:
+                or_conditions = [equal_filter('duration', val) for val in values]
+                filter_conditions.append({"$or": or_conditions})
+        
+        elif category == 'fee':
+            if len(values) == 1:
+                filter_conditions.append(range_filter_statement('fee', min(values[0]), max(values[0])))
+            else:
+                or_conditions = []
+                for fee_range in values:
+                    or_conditions.append(range_filter_statement('fee', min(fee_range), max(fee_range)))
+                filter_conditions.append({"$or": or_conditions})
+        
+        elif category == 'program_language':
+            if len(values) == 1:
+                filter_conditions.append(text_filter('program_language', values[0]))
+            else:
+                or_conditions = []
+                # Individual conditions for each language
+                for lang in values:
+                    or_conditions.append({"$regex": f"(?i)program Language.*{lang}"})
+                # AND condition for all languages together
+                if len(values) > 1:
+                    and_conditions = []
+                    for lang in values:
+                        and_conditions.append({"$regex": f"(?i)program Language.*{lang}"})
+                    or_conditions.append({"$and": and_conditions})
+                
+                filter_conditions.append({"where_document": {"$or": or_conditions}})
+        
+        elif category == 'entry_level':
+            if len(values) == 1:
+                filter_conditions.append(text_filter('entry level', values[0]))
+            else:
+                or_conditions = []
+                # Individual conditions for each level
+                for level in values:
+                    or_conditions.append({"$regex": f"(?i)entry level.*{level}"})
+                # AND condition for all levels together
+                if len(values) > 1:
+                    and_conditions = []
+                    for level in values:
+                        and_conditions.append({"$regex": f"(?i)entry level.*{level}"})
+                    or_conditions.append({"$and": and_conditions})
+                
+                filter_conditions.append({"where_document": {"$or": or_conditions}})
+        
+        elif category == 'city':
+            if len(values) == 1:
+                filter_conditions.append(text_filter('city', values[0]))
+            else:
+                or_conditions = []
+                # Individual conditions for each city
+                for city in values:
+                    or_conditions.append({"$regex": f"(?i)city.*{city}"})
+                # AND condition for all cities together
+                if len(values) > 1:
+                    and_conditions = []
+                    for city in values:
+                        and_conditions.append({"$regex": f"(?i)city.*{city}"})
+                    or_conditions.append({"$and": and_conditions})
+                
+                filter_conditions.append({"where_document": {"$or": or_conditions}})
+        
+        elif category == 'country':
+            if len(values) == 1:
+                filter_conditions.append(text_filter('country', values[0]))
+            else:
+                or_conditions = []
+                # Individual conditions for each country
+                for country in values:
+                    or_conditions.append({"$regex": f"(?i)country.*{country}"})
+                # AND condition for all countries together
+                if len(values) > 1:
+                    and_conditions = []
+                    for country in values:
+                        and_conditions.append({"$regex": f"(?i)country.*{country}"})
+                    or_conditions.append({"$and": and_conditions})
+                
+                filter_conditions.append({"where_document": {"$or": or_conditions}})
+        
+        elif category == 'intake':
+            if len(values) == 1:
+                filter_conditions.append(text_filter('intake', values[0]))
+            else:
+                or_conditions = []
+                # Individual conditions for each intake
+                for intake in values:
+                    or_conditions.append({"$regex": f"(?i)intake.*{intake}"})
+                # AND condition for all intakes together
+                if len(values) > 1:
+                    and_conditions = []
+                    for intake in values:
+                        and_conditions.append({"$regex": f"(?i)intake.*{intake}"})
+                    or_conditions.append({"$and": and_conditions})
+                
+                filter_conditions.append({"where_document": {"$or": or_conditions}})
+    
+    return filter_conditions

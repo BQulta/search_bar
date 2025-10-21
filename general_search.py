@@ -4,93 +4,76 @@ from utils import read_json
 from llm_use import relevance_check, handle_typo_errors
 from filters import *
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
-vdb = Chroma(persist_directory="filter_database_new/", embedding_function=embedding_function)
+vdb = Chroma(persist_directory="new_filter_database/", embedding_function=embedding_function)
 
-def separate_filters(filter_statements):
-    """Separate document content filters from metadata filters"""
-    metadata_filters = []
-    document_filters = []
-    
-    for filter_stmt in filter_statements:
-        if isinstance(filter_stmt, dict):
-            # Check if this filter contains document content filters
-            if contains_document_filter(filter_stmt):
-                document_filters.append(filter_stmt)
-            else:
-                metadata_filters.append(filter_stmt)
-        else:
-            metadata_filters.append(filter_stmt)
-    
-    return metadata_filters, document_filters
 
-def contains_document_filter(filter_dict):
-    """Recursively check if filter contains where_document"""
-    if isinstance(filter_dict, dict):
-        for key, value in filter_dict.items():
-            if key == "where_document":
-                return True
-            elif isinstance(value, (dict, list)):
-                if contains_document_filter(value):
-                    return True
-    elif isinstance(filter_dict, list):
-        for item in filter_dict:
-            if contains_document_filter(item):
-                return True
-    return False
-
-def process_document_filter(filter_dict):
-    """Extract the actual filter from where_document wrapper"""
-    if isinstance(filter_dict, dict):
-        processed = {}
-        for key, value in filter_dict.items():
-            if key == "where_document":
-                return value  # Return the inner filter
-            elif key in ["$or", "$and"]:
-                processed[key] = [process_document_filter(item) for item in value]
-            else:
-                processed[key] = value
-        return processed
-    elif isinstance(filter_dict, list):
-        return [process_document_filter(item) for item in filter_dict]
-    return filter_dict
 
 def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, is_filter_query: bool, filter_statements: list):
     
 
     rewritten_query = handle_typo_errors(user_input)
     
-    all_filter_statements = filter_statements.copy()
-    
-    # Separate document and metadata filters
-    metadata_filters, document_filters = separate_filters(all_filter_statements)
-    
-    # Build search_kwargs
     search_kwargs = {
         "k": 10,  
         "fetch_k": 40,  
         "lambda_mult": 0.4,
     }
+    
+    # Apply user filters first
+    if filter_statements:
+        user_filters = filters(filter_statements)
+        
+        # Separate metadata filters from document filters
+        metadata_filters = []
+        document_filters = []
+        
+        for filter_condition in user_filters:
+            if "where_document" in filter_condition:
+                document_filters.append(filter_condition["where_document"])
+            else:
+                metadata_filters.append(filter_condition)
+        
+        # Apply metadata filters
+        if metadata_filters:
+            if len(metadata_filters) > 1:
+                search_kwargs['filter'] = {"$and": metadata_filters}
+            else:
+                search_kwargs['filter'] = metadata_filters[0]
+        
+        # Apply document filters
+        if document_filters:
+            if len(document_filters) > 1:
+                search_kwargs['where_document'] = {"$and": document_filters}
+            else:
+                search_kwargs['where_document'] = document_filters[0]
+    
+    # Apply exclusion filters
     if more_flag == True:
         exclude_filter = exclude_ids(school_ids, program_ids)
         if exclude_filter:  
-            search_kwargs['filter'] = exclude_filter
+            if 'filter' in search_kwargs:
+                # Combine with existing metadata filters
+                search_kwargs['filter'] = {"$and": [search_kwargs['filter'], exclude_filter]}
+            else:
+                search_kwargs['filter'] = exclude_filter
     
     if is_filter_query == True:
         not_exclude_filter_statments = not_exclude_ids(school_ids, program_ids)
-        search_kwargs['filter'] = not_exclude_filter_statments
-            
-
-    
-    
-    # Add document content filters
-    if document_filters:
-        # Process document filters to extract inner content
-        processed_doc_filters = [process_document_filter(f) for f in document_filters]
-        if len(processed_doc_filters) == 1:
-            search_kwargs["where_document"] = processed_doc_filters[0]
+        if 'filter' in search_kwargs:
+            # Combine with existing metadata filters
+            search_kwargs['filter'] = {"$and": [search_kwargs['filter'], not_exclude_filter_statments]}
         else:
-            search_kwargs["where_document"] = {"$and": processed_doc_filters}
+            search_kwargs['filter'] = not_exclude_filter_statments
     
+    # Apply school ranking filter
+    if search_filter == 'schools':
+        rank_filter = range_filter_statement('rank', 0.0, 30.0)
+        if 'filter' in search_kwargs:
+            # Combine with existing filters
+            search_kwargs['filter'] = {"$and": [search_kwargs['filter'], rank_filter]}
+        else:
+            search_kwargs['filter'] = rank_filter
+
     print("Search kwargs:", search_kwargs)
     
     retriever = vdb.as_retriever(
@@ -111,7 +94,6 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     print(f"Retrieved {len(content)} documents before relevance check")
     
     for doc in content:
-        # ...existing debug code...
         
         if relevance_check(rewritten_query, doc) == 'True':
 
@@ -172,10 +154,8 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
                     generated_school_ids.append(school_id)
                     generated_program_ids.append(program_id)
 
-    print(f"Generated school IDs: {generated_school_ids}")
-    print(f"Generated program IDs: {generated_program_ids}")
     
     if search_filter == 'schools':
         return_docs.sort(key=lambda x: (x.get('rank') is None, -(x.get('rank') or 0)))
 
-    return return_docs, generated_school_ids, generated_program_ids, content 
+    return return_docs, generated_school_ids, generated_program_ids, content
