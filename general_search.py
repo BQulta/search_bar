@@ -2,7 +2,7 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from utils import read_json
 from llm_use import relevance_check, handle_typo_errors
-
+from filters import *
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
 vdb = Chroma(persist_directory="filter_database_new/", embedding_function=embedding_function)
 
@@ -64,20 +64,22 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     # Separate document and metadata filters
     metadata_filters, document_filters = separate_filters(all_filter_statements)
     
-    # Add exclusion filters to metadata filters if more_flag is True
-    if more_flag == True:
-            if school_ids:
-                metadata_filters.append({"school_id": {"$nin": school_ids}})
-            if program_ids:
-                metadata_filters.append({"program_id": {"$nin": program_ids}})
-            
-
     # Build search_kwargs
     search_kwargs = {
         "k": 10,  
         "fetch_k": 40,  
         "lambda_mult": 0.4,
     }
+    if more_flag == True:
+        exclude_filter = exclude_ids(school_ids, program_ids)
+        if exclude_filter:  
+            search_kwargs['filter'] = exclude_filter
+    
+    if is_filter_query == True:
+        not_exclude_filter_statments = not_exclude_ids(school_ids, program_ids)
+        search_kwargs['filter'] = not_exclude_filter_statments
+            
+
     
     
     # Add document content filters
