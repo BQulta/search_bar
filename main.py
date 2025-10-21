@@ -31,7 +31,7 @@ class SearchResponse(BaseModel):
 async def search_endpoint(request: SearchRequest):
 
     try:
-        results, generated_school_ids, generated_program_ids = search(
+        results, generated_school_ids, generated_program_ids, content = search(
             user_input=request.user_input,
             search_filter=request.search_filter,
             school_ids=request.school_ids,
