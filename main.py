@@ -1,7 +1,7 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from general_search import search
-from typing import List, Optional, Dict, Any
+from typing import List, Dict, Any
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -19,7 +19,7 @@ class SearchRequest(BaseModel):
     school_ids: List[str] = []
     program_ids: List[str] = []
     more_flag: bool = False
-    same_query_flag: bool = False
+    is_filter_query: bool = False
     filter_statements: List[Dict[str, Any]] = []
 
 class SearchResponse(BaseModel):
@@ -37,7 +37,7 @@ async def search_endpoint(request: SearchRequest):
             school_ids=request.school_ids,
             program_ids=request.program_ids,
             more_flag=request.more_flag,
-            same_query_flag=request.same_query_flag,
+            is_filter_query=request.is_filter_query,
             filter_statements=request.filter_statements,
         )
         

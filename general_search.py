@@ -1,7 +1,7 @@
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from utils import read_json
-from llm_use import relevance_check
+from llm_use import relevance_check, handle_typo_errors
 
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
 vdb = Chroma(persist_directory="filter_database_new/", embedding_function=embedding_function)
@@ -54,10 +54,11 @@ def process_document_filter(filter_dict):
         return [process_document_filter(item) for item in filter_dict]
     return filter_dict
 
-def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, same_query_flag: bool, filter_statements: list):
+def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, is_filter_query: bool, filter_statements: list):
     
 
-    # Create a copy to avoid modifying the original list
+    rewritten_query = handle_typo_errors(user_input)
+    
     all_filter_statements = filter_statements.copy()
     
     # Separate document and metadata filters
@@ -73,7 +74,7 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     # Build search_kwargs
     search_kwargs = {
         "k": 10,  
-        "fetch_k": 40,  
+        "fetch_k": 20,  
         "lambda_mult": 0.5,
     }
     
@@ -99,62 +100,60 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
 
     school_parent_data = read_json("school_parent_json.json")
     program_parent_data = read_json("program_parent_json.json")
-    content = retriever.invoke(user_input)
+    content = retriever.invoke(rewritten_query)
     return_docs = []
     generated_school_ids = []
     generated_program_ids = []
     
-    unique_school_ids = set() if same_query_flag else None
-    unique_program_ids = set() if same_query_flag else None
+    unique_school_ids = set() 
+    unique_program_ids = set()
 
     print(f"Retrieved {len(content)} documents before relevance check")
     
     for doc in content:
-        # Debug: Check if excluded IDs appear in results
-        doc_school_id = doc.metadata.get('school_id')
-        doc_program_id = doc.metadata.get('program_id')
+        # ...existing debug code...
         
-        if more_flag:
-            if doc_school_id in school_ids:
-                print(f"⚠️  WARNING: Excluded school_id {doc_school_id} found in results!")
-            if doc_program_id in program_ids:
-                print(f"⚠️  WARNING: Excluded program_id {doc_program_id} found in results!")
-        
-        if relevance_check(user_input, doc) == 'True':
+        if relevance_check(rewritten_query, doc) == 'True':
 
             if search_filter == 'schools':
                 school_id = doc.metadata['school_id']
-
-                if same_query_flag:
-                    if school_id not in unique_school_ids:
-                        school_data = school_parent_data[school_id]
-                        return_docs.append(school_data)
-                        generated_school_ids.append(school_id)
-                        unique_school_ids.add(school_id)
-                else:
+                
+                # Always check for uniqueness
+                if school_id not in unique_school_ids:
                     school_data = school_parent_data[school_id]
                     return_docs.append(school_data)
                     generated_school_ids.append(school_id)
+                    unique_school_ids.add(school_id)
 
             elif search_filter == 'programs':
                 program_id = doc.metadata['program_id']
                 
-                if same_query_flag:
-                    if program_id not in unique_program_ids:
-                        program_data = program_parent_data[program_id]
-                        return_docs.append(program_data)
-                        generated_program_ids.append(program_id)
-                        unique_program_ids.add(program_id)
-                else:
+                # Always check for uniqueness
+                if program_id not in unique_program_ids:
                     program_data = program_parent_data[program_id]
                     return_docs.append(program_data)
                     generated_program_ids.append(program_id)
+                    unique_program_ids.add(program_id)
                     
             else:  # 'all'
                 school_id = doc.metadata['school_id']
                 program_id = doc.metadata['program_id']
                 
-                if same_query_flag:
+                # Always check for uniqueness for both schools and programs
+                if school_id not in unique_school_ids:
+                    school_data = school_parent_data[school_id]
+                    return_docs.append(school_data)
+                    generated_school_ids.append(school_id)
+                    unique_school_ids.add(school_id)
+                    
+                if program_id not in unique_program_ids:
+                    program_data = program_parent_data[program_id]
+                    return_docs.append(program_data)
+                    generated_program_ids.append(program_id)
+                    unique_program_ids.add(program_id)
+
+                
+                if is_filter_query:
                     if school_id not in unique_school_ids:
                         school_data = school_parent_data[school_id]
                         return_docs.append(school_data)
@@ -180,4 +179,4 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     if search_filter == 'schools':
         return_docs.sort(key=lambda x: (x.get('rank') is None, -(x.get('rank') or 0)))
 
-    return return_docs, generated_school_ids, generated_program_ids
+    return return_docs, generated_school_ids, generated_program_ids, content 
