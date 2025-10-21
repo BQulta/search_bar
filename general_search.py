@@ -66,9 +66,7 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     
     # Add exclusion filters to metadata filters if more_flag is True
     if more_flag == True:
-        if school_ids:  # Only add if not empty
             metadata_filters.append({"school_id": {"$nin": school_ids}})
-        if program_ids:  # Only add if not empty
             metadata_filters.append({"program_id": {"$nin": program_ids}})
 
     # Build search_kwargs
@@ -78,9 +76,7 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
         "lambda_mult": 0.5,
     }
     
-    # Add metadata filters
-    if metadata_filters:
-        search_kwargs["filter"] = {"$and": metadata_filters}
+    search_kwargs["filter"] = {"$and": metadata_filters}
     
     # Add document content filters
     if document_filters:
