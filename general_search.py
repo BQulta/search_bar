@@ -66,17 +66,19 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     
     # Add exclusion filters to metadata filters if more_flag is True
     if more_flag == True:
-            metadata_filters.append({"school_id": {"$nin": school_ids}})
-            metadata_filters.append({"program_id": {"$nin": program_ids}})
+            if school_ids:
+                metadata_filters.append({"school_id": {"$nin": school_ids}})
+            if program_ids:
+                metadata_filters.append({"program_id": {"$nin": program_ids}})
+            
 
     # Build search_kwargs
     search_kwargs = {
         "k": 10,  
-        "fetch_k": 20,  
-        "lambda_mult": 0.5,
+        "fetch_k": 40,  
+        "lambda_mult": 0.4,
     }
     
-    search_kwargs["filter"] = {"$and": metadata_filters}
     
     # Add document content filters
     if document_filters:
@@ -131,11 +133,10 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
                     generated_program_ids.append(program_id)
                     unique_program_ids.add(program_id)
                     
-            else:  # 'all'
+            else:
                 school_id = doc.metadata['school_id']
                 program_id = doc.metadata['program_id']
                 
-                # Always check for uniqueness for both schools and programs
                 if school_id not in unique_school_ids:
                     school_data = school_parent_data[school_id]
                     return_docs.append(school_data)
