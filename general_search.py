@@ -3,6 +3,9 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from utils import read_json
 from llm_use import relevance_check
 
+embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
+vdb = Chroma(persist_directory="filter_database_new/", embedding_function=embedding_function)
+
 def separate_filters(filter_statements):
     """Separate document content filters from metadata filters"""
     metadata_filters = []
@@ -53,8 +56,6 @@ def process_document_filter(filter_dict):
 
 def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, same_query_flag: bool, filter_statements: list):
     
-    embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
-    vdb = Chroma(persist_directory="filter_database_new/", embedding_function=embedding_function)
 
     # Create a copy to avoid modifying the original list
     all_filter_statements = filter_statements.copy()
@@ -179,4 +180,4 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     if search_filter == 'schools':
         return_docs.sort(key=lambda x: (x.get('rank') is None, -(x.get('rank') or 0)))
 
-    return return_docs, generated_school_ids, generated_program_ids
+    return return_docs, generated_school_ids, generated_program_ids, content
