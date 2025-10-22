@@ -161,19 +161,20 @@ def handle_typo_errors(user_input: str):
     'ESDES Business School'
     User Input: "{user_input}"
     
-    Please provide the corrected version of the user input.
+    Please provide the corrected version of the user input only without any added text.
     """
     
     response = llm_4o_mini.invoke(prompt.format(user_input=user_input))
     return response.content.strip()
 
 
-def relevance_check(user_input: str, doc: Document):
+def relevance_check(user_input: str, doc: Document, search_kwargs: dict):
     prompt = """
     you will act as a judge to the content retrieverd from a vector database and a query 
     the task of this database is to act as a search bar so the user enters a query and the retriever return a list of schools and programs 
     your only task to check if the doc is relevant or not 
-    pay attention to the names of the schools as they can be relevant 
+    pay attention to the names of the schools if the user entered a school name of this and the documents contains different name return False  
+    and pay attention to the search kwargs of the retirever you find something not ok return False 
         'ESLSCA Business School - Planeta Group',
     'École Supérieure de Tourisme (Yschools)',
     'Toulouse Business School',
@@ -322,6 +323,7 @@ def relevance_check(user_input: str, doc: Document):
     if it is not rerurn False
     the doc {doc}
     the user_input {user_input}
+    search_kwargs {search_kwargs}
     """
     
-    return llm_4o_mini.invoke(f"{prompt} \n\n {prompt.format(user_input=user_input, doc=doc)}").content
+    return llm_4o_mini.invoke(f"{prompt} \n\n {prompt.format(user_input=user_input, doc=doc, search_kwargs = search_kwargs)}").content

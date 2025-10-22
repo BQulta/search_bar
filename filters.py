@@ -1,8 +1,13 @@
+from typing import Optional
 def exclude_ids(school_ids, program_ids):
     filter_conditions = []
     
-    if school_ids:
+    if len(school_ids) > 1:
         filter_conditions.append({"school_id": {"$nin": school_ids}})
+    
+    elif len(school_ids) == 1:
+        filter_conditions.append({"school_id": {"$in": school_ids}})
+
     
     if program_ids:
         filter_conditions.append({"program_id": {"$nin": program_ids}})
@@ -77,7 +82,7 @@ def filters(filter_statements):
         
         elif category == 'program_language':
             if len(values) == 1:
-                filter_conditions.append(text_filter('program_language', values[0]))
+                filter_conditions.append(text_filter('program language', values[0]))
             else:
                 or_conditions = []
                 # Individual conditions for each language

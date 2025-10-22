@@ -6,7 +6,7 @@ from filters import *
 import json
 
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
-vdb = Chroma(persist_directory="new_filter_database/", embedding_function=embedding_function)
+vdb = Chroma(persist_directory="updated_filter_db/", embedding_function=embedding_function)
 
 def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, is_filter_query: bool, filter_statements: list):
     
@@ -15,7 +15,7 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     print(f"Rewritten query: {rewritten_query}")
     
     search_kwargs = {
-        "k": 10,  
+        "k": 15,  
         "fetch_k": 40,  
         "lambda_mult": 0.4,
     }
@@ -114,7 +114,7 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     print(f"Retrieved {len(content)} documents before relevance check")
     
     for i, doc in enumerate(content):
-        relevance_result = relevance_check(rewritten_query, doc)
+        relevance_result = relevance_check(rewritten_query, doc, search_kwargs)
         print(f"Doc {i}: relevance = {relevance_result}")
         
         if relevance_result == 'True':
