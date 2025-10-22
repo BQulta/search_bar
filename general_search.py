@@ -10,13 +10,10 @@ vdb = Chroma(persist_directory="updated_filter_db/", embedding_function=embeddin
 
 def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, is_filter_query: bool, filter_statements: list):
     
-    rewritten_query = handle_typo_errors(user_input)
-    print(f"Original query: {user_input}")
-    print(f"Rewritten query: {rewritten_query}")
     
     search_kwargs = {
         "k": 15,  
-        "fetch_k": 40,  
+        "fetch_k": 30,  
         "lambda_mult": 0.4,
     }
     
@@ -89,6 +86,9 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
         search_type="mmr",
         search_kwargs=search_kwargs
     )
+    rewritten_query = handle_typo_errors(user_input, search_kwargs)
+    print(f"Original query: {user_input}")
+    print(f"Rewritten query: {rewritten_query}")
 
     school_parent_data = read_json("school_parent_json.json")
     program_parent_data = read_json("program_parent_json.json")

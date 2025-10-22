@@ -16,7 +16,12 @@ llm_4o_mini = get_llm()
 
 
 
-def handle_typo_errors(user_input: str):
+
+def handle_typo_errors(user_input: str, search_kwargs: list ):
+    # Handle empty input early
+    if not user_input.strip():
+        return ""
+    
     prompt = """
     You are an expert in correcting typographical errors in user queries. 
     Given the following user input, identify and correct any typos to improve clarity and accuracy.
@@ -165,13 +170,17 @@ def handle_typo_errors(user_input: str):
     'ILERI - FIGS Group',
     'PENNINGHEN - GALILEO Group',
     'ESDES Business School'
-    User Input: "{user_input}"
-    
+    User Input: {user_input}
+    if the user input is empty write a query that describe the search kwargs for example if the search kwargs has program type law return "schools and programs in law" 
+    {search_kwargs}
     Please provide the corrected version of the user input only without any added text.
     """
+    print(search_kwargs)
     
-    response = llm_4o_mini.invoke(prompt.format(user_input=user_input))
-    return response.content.strip()
+    response = llm_4o_mini.invoke(prompt.format(user_input=user_input, search_kwargs=search_kwargs))
+    print(response)
+    
+    return response
 
 
 def relevance_check(user_input: str, doc: Document, search_kwargs: dict):
@@ -337,18 +346,23 @@ def relevance_check(user_input: str, doc: Document, search_kwargs: dict):
     return llm_4o_mini.invoke(f"{prompt} \n\n {prompt.format(user_input=user_input, doc=doc, search_kwargs = search_kwargs)}").content
 
 
+
 def batch_relevance_filter(user_input: str, docs: list, search_kwargs: dict):
     """
     Filter a list of documents for relevance in a single LLM call.
     Returns only the relevant documents.
     """
+    print(f"DEBUG: batch_relevance_filter called with user_input='{user_input}', len(docs)={len(docs)}")
+    print(f"DEBUG: user_input.strip()='{user_input.strip()}', bool check={not user_input.strip()}")
+    
     if not docs:
         return []
     
-    if not user_input.strip():  # If input is empty, return all docs
+    # Check for empty input (including '""' case) and return all docs
+    if not user_input.strip() or user_input.strip() == '""' or user_input.strip() == "''":
+        print(f"Empty input detected, returning all {len(docs)} documents")
         return docs
     
-    # Create batch prompt with all documents
     docs_text = ""
     for i, doc in enumerate(docs):
         # Truncate content to avoid token limits
@@ -363,7 +377,7 @@ def batch_relevance_filter(user_input: str, docs: list, search_kwargs: dict):
     Rules:
     - If user searches for a specific school name, only return documents from that school
     - Pay attention to the search filter requirements
-    - If input is empty, all documents are relevant
+    - If input is empty or blank, all documents are relevant
     - Be strict about school name matching
     
     Valid school names include:
