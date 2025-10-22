@@ -177,7 +177,7 @@ def handle_typo_errors(user_input: str, search_kwargs: list ):
     """
     print(search_kwargs)
     
-    response = llm_4o_mini.invoke(prompt.format(user_input=user_input, search_kwargs=search_kwargs))
+    response = llm_4o_mini.invoke(prompt.format(user_input=user_input, search_kwargs=search_kwargs)).content
     print(response)
     
     return response
