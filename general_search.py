@@ -1,10 +1,10 @@
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from utils import read_json
-from llm_use import relevance_check, handle_typo_errors
 from filters import *
 import json
 
+from llm_use import relevance_check, handle_typo_errors, batch_relevance_filter
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
 vdb = Chroma(persist_directory="updated_filter_db/", embedding_function=embedding_function)
 
@@ -85,11 +85,6 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     print(json.dumps(search_kwargs, indent=2))
     print("===========================")
     
-    # Test basic retrieval first
-    test_retriever = vdb.as_retriever(search_type="mmr", search_kwargs={"k": 5})
-    test_content = test_retriever.invoke(rewritten_query)
-    print(f"Test search (no filters) returned: {len(test_content)} docs")
-    
     retriever = vdb.as_retriever(
         search_type="mmr",
         search_kwargs=search_kwargs
@@ -100,9 +95,10 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     content = retriever.invoke(rewritten_query)
     
     print(f"Raw retriever returned {len(content)} documents")
-    if content:
-        print(f"First doc metadata: {content[0].metadata}")
-        print(f"First doc content preview: {content[0].page_content[:200]}...")
+    
+    # **NEW: Batch relevance filtering replaces individual checks**
+    relevant_docs = batch_relevance_filter(rewritten_query, content, search_kwargs)
+    print(f"After relevance filtering: {len(relevant_docs)} documents")
     
     return_docs = []
     generated_school_ids = []
@@ -110,67 +106,60 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     
     unique_school_ids = set() 
     unique_program_ids = set()
-
-    print(f"Retrieved {len(content)} documents before relevance check")
     
-    for i, doc in enumerate(content):
-        relevance_result = relevance_check(rewritten_query, doc, search_kwargs)
-        print(f"Doc {i}: relevance = {relevance_result}")
+    # Process only the relevant documents
+    for i, doc in enumerate(relevant_docs):
+        print(f"Processing relevant doc {i}")
         
-        if relevance_result == 'True':
-            print(f"Doc {i} passed relevance check")
-            
-            school_id = doc.metadata.get('school_id')
-            program_id = doc.metadata.get('program_id')
-            
-            print(f"Doc {i}: school_id={school_id}, program_id={program_id}")
+        school_id = doc.metadata.get('school_id')
+        program_id = doc.metadata.get('program_id')
+        
+        print(f"Doc {i}: school_id={school_id}, program_id={program_id}")
 
-            if search_filter == 'schools':
-                if school_id and school_id not in unique_school_ids:
-                    try:
-                        school_data = school_parent_data[school_id]
-                        return_docs.append(school_data)
-                        generated_school_ids.append(school_id)
-                        unique_school_ids.add(school_id)
-                        print(f"Added school: {school_id}")
-                    except KeyError:
-                        print(f"School {school_id} not found in parent data")
+        if search_filter == 'schools':
+            if school_id and school_id not in unique_school_ids:
+                try:
+                    school_data = school_parent_data[school_id]
+                    return_docs.append(school_data)
+                    generated_school_ids.append(school_id)
+                    unique_school_ids.add(school_id)
+                    print(f"Added school: {school_id}")
+                except KeyError:
+                    print(f"School {school_id} not found in parent data")
 
-            elif search_filter == 'programs':
-                if program_id and program_id not in unique_program_ids:
-                    try:
-                        program_data = program_parent_data[program_id]
-                        return_docs.append(program_data)
-                        generated_program_ids.append(program_id)
-                        unique_program_ids.add(program_id)
-                        print(f"Added program: {program_id}")
-                    except KeyError:
-                        print(f"Program {program_id} not found in parent data")
-                    
-            else:  # search_filter == 'all'
-                # Add school if unique
-                if school_id and school_id not in unique_school_ids:
-                    try:
-                        school_data = school_parent_data[school_id]
-                        return_docs.append(school_data)
-                        generated_school_ids.append(school_id)
-                        unique_school_ids.add(school_id)
-                        print(f"Added school: {school_id}")
-                    except KeyError:
-                        print(f"School {school_id} not found in parent data")
+        elif search_filter == 'programs':
+            if program_id and program_id not in unique_program_ids:
+                try:
+                    program_data = program_parent_data[program_id]
+                    return_docs.append(program_data)
+                    generated_program_ids.append(program_id)
+                    unique_program_ids.add(program_id)
+                    print(f"Added program: {program_id}")
+                except KeyError:
+                    print(f"Program {program_id} not found in parent data")
                 
-                # Add program if unique
-                if program_id and program_id not in unique_program_ids:
-                    try:
-                        program_data = program_parent_data[program_id]
-                        return_docs.append(program_data)
-                        generated_program_ids.append(program_id)
-                        unique_program_ids.add(program_id)
-                        print(f"Added program: {program_id}")
-                    except KeyError:
-                        print(f"Program {program_id} not found in parent data")
-        else:
-            print(f"Doc {i} failed relevance check")
+        else:  # search_filter == 'all'
+            # Add school if unique
+            if school_id and school_id not in unique_school_ids:
+                try:
+                    school_data = school_parent_data[school_id]
+                    return_docs.append(school_data)
+                    generated_school_ids.append(school_id)
+                    unique_school_ids.add(school_id)
+                    print(f"Added school: {school_id}")
+                except KeyError:
+                    print(f"School {school_id} not found in parent data")
+            
+            # Add program if unique
+            if program_id and program_id not in unique_program_ids:
+                try:
+                    program_data = program_parent_data[program_id]
+                    return_docs.append(program_data)
+                    generated_program_ids.append(program_id)
+                    unique_program_ids.add(program_id)
+                    print(f"Added program: {program_id}")
+                except KeyError:
+                    print(f"Program {program_id} not found in parent data")
 
     print(f"Final results: {len(return_docs)} documents")
     print(f"School IDs: {generated_school_ids}")
