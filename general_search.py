@@ -6,7 +6,7 @@ import json
 
 from llm_use import relevance_check, handle_typo_errors, batch_relevance_filter
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
-vdb = Chroma(persist_directory="updated_filter_db/", embedding_function=embedding_function)
+vdb = Chroma(persist_directory="no_archive_db/", embedding_function=embedding_function)
 
 def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, is_filter_query: bool, filter_statements: list):
     
