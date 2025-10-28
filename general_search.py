@@ -171,7 +171,7 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
     print(f"Program IDs: {generated_program_ids}")
     
     # Sort schools by rank if needed (fallback)
-    if search_filter == 'schools':
-        return_docs.sort(key=lambda x: (x.get('rank') is None, -(x.get('rank') or 0)))
+    # if search_filter == 'schools':
+    #     return_docs.sort(key=lambda x: (x.get('rank') is None, -(x.get('rank') or 0)))
 
     return return_docs, generated_school_ids, generated_program_ids, content

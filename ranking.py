@@ -11,4 +11,16 @@ def hybrid_retrieve(vdb, query, k, rank_weight=0.3, sim_weight=0.7, filter=None)
     hybrid_scores = sim_weight * similarities + rank_weight * ranks_norm
     for d, s in zip(docs, hybrid_scores):
         d.metadata["hybrid_score"] = float(s)
-    return sorted(docs, key=lambda d: d.metadata["hybrid_score"], reverse=True)
+    
+    # Separate ranked and unranked schools
+    ranked_schools = [d for d in docs if d.metadata.get("rank", 0) > 0]
+    unranked_schools = [d for d in docs if d.metadata.get("rank", 0) == 0]
+    
+    # Sort ranked schools by rank ascending (lower rank number = better)
+    ranked_schools.sort(key=lambda d: d.metadata.get("rank", float('inf')))
+    
+    # Sort unranked schools by hybrid score descending
+    unranked_schools.sort(key=lambda d: d.metadata["hybrid_score"], reverse=True)
+    
+    # Return ranked schools first, then unranked schools
+    return ranked_schools + unranked_schools
