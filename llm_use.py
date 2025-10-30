@@ -64,7 +64,12 @@ def batch_relevance_filter(user_input: str, docs: list, search_kwargs: dict):
         content_preview = doc.page_content[:300] + "..." if len(doc.page_content) > 300 else doc.page_content
         docs_text += f"Document {i+1}:\nContent: {content_preview}\nMetadata: {doc.metadata}\n\n"
     
-    prompt = pull_prompt_from_langsmith("relevance-check-search-bar")
+    prompt = pull_prompt_from_langsmith("relevance-check-search-bar").format(
+            user_input=user_input,
+            search_kwargs=search_kwargs,
+            docs_text=docs_text
+        )
+    
     
     try:
         response = llm_4o_mini.invoke(prompt)
