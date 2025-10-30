@@ -1,6 +1,14 @@
 from numpy import array
 def hybrid_retrieve(vdb, query, k, rank_weight=0.3, sim_weight=0.7, filter=None):
-    docs_with_scores = vdb.similarity_search_with_score(query, k=k, filter=filter or None)
+    try:
+        docs_with_scores = vdb.similarity_search_with_score(query, k=k, filter=filter or None)
+    except Exception as e:
+        print(f"Error in similarity_search_with_score: {e}")
+        return []
+    
+    if not docs_with_scores:
+        return []
+    
     docs = []
     for doc, distance in docs_with_scores:
         doc.metadata["similarity_score"] = 1 - distance

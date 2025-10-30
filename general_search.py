@@ -97,14 +97,24 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
             k = 1000
         else:
             k = 30 
-        content = hybrid_retrieve(vdb = vdb, query= rewritten_query, k = k,filter = search_kwargs.get("filter", None))
+        
+        try:
+            content = hybrid_retrieve(vdb = vdb, query= rewritten_query, k = k,filter = search_kwargs.get("filter", None))
+        except Exception as e:
+            print(f"Error in hybrid_retrieve: {e}")
+            return [], [], [], []
+        
         # print("Top 5 hybrid-ranked documents:")
         # for i, d in enumerate(content[:5]):
         #     print(f"{i+1}. rank={d.metadata.get('rank')}, sim={d.metadata.get('similarity_score'):.3f}, hybrid={d.metadata['hybrid_score']:.3f}")
     else:
         # Use normal retriever for programs or all
-        content = retriever.invoke(rewritten_query)
-        print(f"Raw retriever returned {len(content)} documents")
+        try:
+            content = retriever.invoke(rewritten_query)
+            print(f"Raw retriever returned {len(content)} documents")
+        except Exception as e:
+            print(f"Error in retriever.invoke: {e}")
+            return [], [], [], []
     # ============================================
 
     # Relevance filter
