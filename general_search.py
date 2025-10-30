@@ -67,7 +67,13 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
         # Apply exclusion filters
         if more_flag == True:
             try:
-                exclude_filter = exclude_ids(school_ids, program_ids)
+                if search_filter == 'schools':
+                    exclude_filter = exclude_ids(school_ids, [])
+                elif search_filter == 'programs':                
+                    exclude_filter = exclude_ids([], program_ids)
+                else :
+                    exclude_filter = exclude_ids(school_ids, program_ids)
+                    
                 if exclude_filter:  
                     if 'filter' in search_kwargs:
                         search_kwargs['filter'] = {"$and": [search_kwargs['filter'], exclude_filter]}
