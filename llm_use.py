@@ -182,171 +182,6 @@ def handle_typo_errors(user_input: str, search_kwargs: list ):
     
     return response
 
-
-def relevance_check(user_input: str, doc: Document, search_kwargs: dict):
-    prompt = """
-    you will act as a judge to the content retrieverd from a vector database and a query 
-    the task of this database is to act as a search bar so the user enters a query and the retriever return a list of schools and programs 
-    your only task to check if the doc is relevant or not 
-    pay attention to the names of the schools if the user entered a school name of this and the documents contains different name return False  
-    and pay attention to the search kwargs of the retirever you find something not ok return False 
-        'ESLSCA Business School - Planeta Group',
-    'École Supérieure de Tourisme (Yschools)',
-    'Toulouse Business School',
-    'IGEFI - FIGS Group',
-    'KEDGE Business School',
-    'Rennes School of Business',
-    'ICN Business School',
-    'EFAP - EDH Group',
-    'SKEMA Business School',
-    'Paris School Of Technology & Business - GALILEO Group',
-    'Cours Florent - GALILEO Group',
-    'EDC Business School',
-    'Ecole Bleue - EDH Group',
-    'WIS - FIGS Group',
-    'Montpellier Business School',
-    'IIM Digital School - Pôle Léonard de Vinci',
-    'École Supérieure de Design (Yschools)',
-    'South Champagne Business School (Yschools)',
-    'Atelier De Sèvres - GALILEO Group',
-    'European Business School Paris - GA Education Group',
-    'Clermont School of Business',
-    'Sup De Com - FIGS Group',
-    'The American Business School - IGENSIA Group',
-    'ESG Immobilier (GALILEO Group)',
-    'ESARC Evolution - GALILEO Group',
-    'Ecole 89 - GA Education Group',
-    'Institut National De Gemmologie - AD Education Group',
-    'Albert School',
-    'CY Tech',
-    'Sup De Luxe - Planete Group',
-    'Audencia Business School',
-    '3A - FIGS Group',
-    'Narratiiv - GALILEO Group',
-    '3W Academy - EDH Group',
-    'IMT Atlantique',
-    'EFREI',
-    'HEAD School of law',
-    'HETIC - GALILEO Group',
-    'ESG Nantes - GALILEO Group',
-    'IPSA',
-    'ESTP Engineering School',
-    'Brassart - EDH Group',
-    'ISEP Engineering School',
-    'ICD - IGENSIA Group',
-    'ISTEC Business School',
-    'IFA Paris - EDH Group',
-    'JUNIA: HEI',
-    'Sports Management School - Planeta Group',
-    'EXCELIA Group',
-    'ESIEE ',
-    'JUNIA: ISEN',
-    'Sup Career - OMNES Group',
-    'ELIJE - GALILEO Group',
-    'ÉSEC - EDH Group',
-    'ICART - EDH Group',
-    'IFAG - FIGS Group',
-    'Istituto Marangoni - GALILEO Group',
-    'LISAA - GALILEO Group',
-    'Merkure Business School - GALILEO Group',
-    'ESG Bordeaux - GALILEO Group',
-    'CREAD - EDH Group',
-    'emlyon Business School',
-    'CLCF - GALILEO Group',
-    'ESG ACT (GALILEO Group)',
-    'International University of Monaco - OMNES Group',
-    'CEFAM - FIGS Group',
-    'IGS RH - IGENSIA Group',
-    'ESMD - FIGS Group',
-    'IEFT - FIGS Group',
-    'ESG Rouen - GALILEO Group',
-    'ISC Paris',
-    'Ecoles Ferrières - GA Education Group',
-    'ESILV - Pôle Léonard de Vinci',
-    'EM Strasbourg Business School',
-    'ISCPA - IGENSIA Group',
-    'ESAIL - FIGS Group',
-    'IMSI - IGENSIA Group',
-    'ESG RH - GALILEO Group',
-    'Bellecour - GALILEO Group',
-    'Institut Culinaire de France - GALILEO Group',
-    'ITM Paris - GALILEO Group',
-    'ESD Ecole Supérieur du Digital - AD Education Group',
-    'ESP Ecole supérieur de Publicité - AD Education Group',
-    'BESIGN School ',
-    'ECE Engineering School - OMNES Group',
-    'ESG Tourisme - GALILEO Group',
-    'MBA ESG - GALILEO Group',
-    'Paris School of Business',
-    'ESG Strasbourg - GALILEO Group',
-    'Burgundy School of Business',
-    'CESI Paris Engineering School',
-    'ECAM La Salle Lyon ',
-    'aivancity',
-    'La Web School - GALILEO Group',
-    'ESG Aix-En-Provence - GALILEO Group',
-    'IHEDREA - FIGS Group',
-    'EM Normandie Business School',
-    'EFJ - EDH Group',
-    'Brest Business School',
-    'FFOLLOZZ - IGENSIA Group',
-    'IDRAC - FIGS Group',
-    'Digital Campus - GALILEO Group',
-    'CIFACOM - GALILEO Group',
-    'ESG LUXE (GALILEO Luxe)',
-    'Strate School of Design - GALILEO Group',
-    'Ecole de Conde - AD Education Group',
-    'IMT Business School',
-    'EPSI - FIGS Group',
-    'ESG Finance - GALILEO Group',
-    'ESAIP Engineering Sch',
-    'ESG Tours - GALILEO Group',
-    'IET - FIGS Group',
-    'IESEG School of Management',
-    'MOPA - EDH Group',
-    'NEOMA Business School',
-    'ESG Toulouse - GALILEO Group',
-    'Atelier Chardon Savard - GALILEO Group',
-    'INSEEC - OMNES Group',
-    'ESCE International Business School - OMNES Group',
-    'EPITA Engineering School',
-    'JUNIA: ISA',
-    'Sup Biotech',
-    'ESGCI - GALILEO Group',
-    'HEIP - OMNES Group',
-    'EAC - AD Education Group',
-    'RUBIKA',
-    'ESSCA Business School',
-    'EMLV Business School',
-    'IMIS - IGENSIA Group',
-    'IPI - IGENSIA Group',
-    'ESG Rennes (Galileo Group)',
-    'ESG Lyon - GALILEO Group',
-    'IESA arts & Culture - GALILEO Group',
-    'IPAG Business School',
-    'ESAM - IGENSIA Group',
-    'Ferrandi Paris',
-    'Ecole Supérieur du Parfum - AD Education Group',
-    'ESG Montpellier - GALILEO Group',
-    'ESG Sport - GALILEO Group,
-    'Sup de Pub - OMNES Group',
-    'ILERI - FIGS Group',
-    'PENNINGHEN - GALILEO Group',
-    'ESDES Business School'
-
-    if it is relevant return True 
-    if it is not rerurn False
-    if the input is empty return True always
-    don't show your steps answer only with True or False
-    the doc {doc}
-    the user_input {user_input}
-    search_kwargs {search_kwargs}
-    """
-    
-    return llm_4o_mini.invoke(f"{prompt} \n\n {prompt.format(user_input=user_input, doc=doc, search_kwargs = search_kwargs)}").content
-
-
-
 def batch_relevance_filter(user_input: str, docs: list, search_kwargs: dict):
     """
     Filter a list of documents for relevance in a single LLM call.
@@ -379,9 +214,31 @@ def batch_relevance_filter(user_input: str, docs: list, search_kwargs: dict):
     - Pay attention to the search filter requirements
     - If input is empty or blank, all documents are relevant
     - Be strict about school name matching
+    - Note that there maybe a lot of languages that the user can search with for example bachelor en management is the same as bachelor in management is the same as bachelor management so pay attention to these details 
+    - Also note if the user specified a certain program type stick with it for example bachelor is not the same as MBA even if it's the same field of bachelor the program types are
+            "MS",
+            "MSc",
+            "BBA",
+            "Bachelor",
+            "Master",
+            "MBA",
+            "Cycle Préparatoire",
+            "BTS",
+            "Cycle Ingénieur",
+       so if the user specified bachelor anything that is not bachelor is not relevant 
+    - User says **"MS"** or **"Mastère Spécialisé"** → stick with `"Mastère Spécialisé®"` or "Ms"  (include ® symbol)
+    - User says **"MSc"** → stick with `"MSc"`
+    - User says **"Master"** or **"masters"** (general/vague) → stick with any of these `"Master", "Mastère Spécialisé®", "MSc"
+    - User says **"MBA"** → stick with `"MBA"`
+    - User says **"Bachelor"** (general) → stick with `"Bachelor", "BBA "(BBA only for business related studies)`
+    - User says **"BBA"** (specific) → stick with `"BBA"`
+    - User says **"engineering cycle"** or **"cycle ingénieur"** → stick with `"Cycle Ingénieur"`
+    - User says **"preparatory cycle"** or **"cycle préparatoire"** → stick with `"Cycle Préparatoire"`
+    - User says **"BTS" -> stick with "BTS"
     
+   - Also stick to the field of the search that the user used for example communcation it is not the same as marketing but if communication was found in the specilization of the program it is fine that is relevant other than this it is not relevant  for example if the user said communication don't show game design for example unless it has a communication specilization 
     Valid school names include:
-        'ESLSCA Business School - Planeta Group',
+    'ESLSCA Business School - Planeta Group',
     'École Supérieure de Tourisme (Yschools)',
     'Toulouse Business School',
     'IGEFI - FIGS Group',

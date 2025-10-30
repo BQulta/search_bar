@@ -31,9 +31,9 @@ def not_exclude_ids(school_ids, program_ids):
     if len(filter_conditions) > 1:
         return {"$and": filter_conditions}
     elif len(filter_conditions) == 1:
-        return filter_conditions[0]  
+        return filter_conditions[0]
     else:
-        return {}
+        return None
 
 def range_filter_statement(key_name, min_value, max_value):
     return {"$and": [{key_name:{"$lte":max_value}},{key_name: {"$gte":min_value}}]}

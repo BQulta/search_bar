@@ -5,7 +5,7 @@ from filters import *
 import json
 from ranking import hybrid_retrieve
 
-from llm_use import relevance_check, handle_typo_errors, batch_relevance_filter
+from llm_use import  handle_typo_errors, batch_relevance_filter
 embedding_function = HuggingFaceEmbeddings(model="intfloat/e5-large-v2")
 vdb = Chroma(persist_directory="no_archive_db/", embedding_function=embedding_function)
 
@@ -67,10 +67,10 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
             else:
                 search_kwargs['filter'] = not_exclude_filter_statments
     
-    # Apply school ranking filter
-    if search_filter == 'schools':
-        if 'filter' in search_kwargs:
-            search_kwargs['filter'] = {"$and": [search_kwargs['filter']]}
+    # # Apply school ranking filter
+    # if search_filter == 'schools':
+    #     if 'filter' in search_kwargs:
+    #         search_kwargs['filter'] = {"$and": [search_kwargs['filter']]}
 
     print("=== FINAL SEARCH KWARGS ===")
     print(json.dumps(search_kwargs, indent=2))
