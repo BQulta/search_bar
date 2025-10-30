@@ -78,7 +78,8 @@ def search(user_input: str, search_filter: str, school_ids: list, program_ids: l
         
         if is_filter_query == True:
             try:
-                not_exclude_filter_statments = not_exclude_ids(school_ids, program_ids)
+                if rewritten_query != '':
+                    not_exclude_filter_statments = not_exclude_ids(school_ids, program_ids)
                 if not_exclude_filter_statments:
                     if 'filter' in search_kwargs:
                         search_kwargs['filter'] = {"$and": [search_kwargs['filter'], not_exclude_filter_statments]}
