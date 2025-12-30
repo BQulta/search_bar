@@ -1,0 +1,45 @@
+name: Data Pipeline
+
+on:
+  schedule:
+    # Run at 3:30 PM Egypt time (1:30 PM UTC)
+    - cron: '30 13 * * *'
+    # Run at 6:30 PM Egypt time (4:30 PM UTC)  
+    - cron: '30 16 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  run-data-pipeline:
+    runs-on: self-hosted
+    
+    steps:
+    - name: Checkout SG-AI-Team/search_bar
+      uses: actions/checkout@v4
+      
+
+    - name: Activate virtual environment
+      run: |
+        source /home/beshoy_ashraf/search-bar-test/search-bar-test/bin/activate
+        
+    - name: Run data pipeline
+      run: |
+        source /home/beshoy_ashraf/search-bar-test/search-bar-test/bin/activate
+        python data_operations/full_data_pipeline.py
+        
+    - name: Commit and push if changes
+      run: |
+        git config --local user.email "beshoy.qulta@studentgator.com"
+        git config --local user.name "BQulta"
+        git add /home/beshoy_ashraf/search-bar-test/data/search_db
+        git diff --staged --quiet || git commit -m "Automated data pipeline update - $(date)"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+
+    - name: Restart Docker container
+      run: |
+        source ~/search-bar-test/bin/activate
+        docker build -t search-bar -f Docker/DockerFile .
+        docker stop search-bar-container || true
+        docker rm search-bar-container || true
+        docker run -d --name search-bar-container -p 5001:5001 search-bar
