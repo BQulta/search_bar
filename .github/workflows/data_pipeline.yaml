@@ -34,8 +34,8 @@ jobs:
 
     - name: Restart Docker container
       run: |
-        source ~/search-bar-test/bin/activate
+        source /home/beshoy_ashraf/search-bar-test/search-bar-test/bin/activate
         docker build -t search-bar -f Docker/DockerFile .
-        docker stop search-bar-container || true
+        docker stop search-bar || true
         docker rm search-bar-container || true
-        docker run -d --name search-bar-container -p 5001:5001 search-bar
+        docker run -d --name search-bar -p 5000:5000 search-bar
