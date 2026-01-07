@@ -49,4 +49,6 @@ jobs:
         sudo docker build -t search-bar -f Docker/DockerFile .
         
         # Run the new container
-        sudo docker run -d --name search-bar-container -p 5000:5000 search-bar
+        sudo docker run -d --name search-bar-container -p 5000:5000 \
+          -v /home/beshoy_ashraf/search_bar/actions-runner/.env:/app/.env \
+          search-bar
