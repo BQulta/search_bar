@@ -9,7 +9,7 @@ from langsmith import traceable
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.utils import read_json
+from utils.utils import *
 from src.filters import *
 from src.ranking import hybrid_retrieve
 from src.llm_use import handle_typo_errors, check_relevance, extract_fields, create_specialization_flag
@@ -29,6 +29,7 @@ data_path = os.path.join(project_root, "data")
 db_path = os.path.join(data_path, "search_db")
 school_parent_json_path = os.path.join(data_path, "school_parent_json.json")
 program_parent_json_path = os.path.join(data_path, "program_parent_json.json")
+school_names_list = read_txt(os.path.join(data_path, "school_names.txt"))
 print(f"🔍 Project root: {project_root}")
 print(f"🔍 Database path: {db_path}")
 print(f"🔍 Database exists: {os.path.exists(db_path)}")
@@ -45,10 +46,7 @@ except Exception as e:
 def search(user_input: str, search_filter: str, school_ids: list, program_ids: list, more_flag: bool, is_filter_query: bool, filter_statements: list):
     # Typo correction
     try:
-        if len(user_input.strip()) < 2:
-            rewritten_query = user_input
-        else:
-            rewritten_query = handle_typo_errors(user_input)
+        rewritten_query = handle_typo_errors(user_input, school_names_list)
     except Exception:
         rewritten_query = user_input
 

@@ -37,4 +37,4 @@ final_list_of_json_for_markdown = generate_md_json(
 specilization_docs, double_diplomas_docs = create_specilizations_document_objects(final_list_of_json_for_markdown, school_data, program_data)
 program_docs = create_programs_document_objects(final_list_of_json_for_markdown, school_data, program_data)
 vdb_documents = specilization_docs + double_diplomas_docs + program_docs
-vdb = create_vdb(vdb_documents)
+# vdb = create_vdb(vdb_documents)
