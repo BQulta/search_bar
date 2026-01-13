@@ -5,10 +5,12 @@ the_dict_of_school_data_needed_in_programs = dict()
 
 def generate_school_parent(output_path: str, school_data):
     school_parent_json = dict()
+    school_names_list = []
     for school in school_data:
         the_json_we_want_to_return = dict()
         the_json_we_want_to_return["school_id"] = school.get("school_id")
         the_json_we_want_to_return["school_name"] = school.get("school_name")
+        school_names_list.append(school.get("school_name"))
         if school["school_metadata"] is not None:
             the_json_we_want_to_return["rank"] = school["school_metadata"]["rankings"]["average_fr_rank"]
         else:
@@ -22,6 +24,8 @@ def generate_school_parent(output_path: str, school_data):
     with open(output_path, 'w') as f:
         json.dump(school_parent_json, f, indent=2)
 
+    with open("data/school_names.txt", "w", encoding="utf-8") as f:
+        f.write("\n".join(school_names_list))
     return school_parent_json
 
 
