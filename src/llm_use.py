@@ -37,20 +37,20 @@ llm_41_mini = ChatOpenAI(
         top_p=0.0,
     )
 
-def handle_typo_errors(user_input: str):
+def handle_typo_errors(user_input: str, school_names_list: list):
     try:
         # Handle empty input early
         if not user_input.strip():
             return ""
                 
         try:
-            prompt = pull_prompt_from_langsmith("typo-error-handle-prompt-search-bar")
+            prompt = pull_prompt_from_langsmith("typo-error-handle-prompt-search-bar-dynamic")
         except Exception as e:
             print(f"Error pulling prompt: {e}")
             return user_input  # Return original input if prompt fails
         
         try:
-            response = llm_41_mini.invoke(prompt.format(user_input=user_input)).content
+            response = llm_41_mini.invoke(prompt.format(user_input=user_input, school_names_list=school_names_list)).content
             # Fix: Clean the response to ensure single line
             cleaned_response = response.strip().split('\n')[0]  # Take only first line
             print(cleaned_response)

@@ -11,10 +11,15 @@ on:
 jobs:
   run-data-pipeline:
     runs-on: self-hosted
+    permissions:
+      contents: write
+      pull-requests: write
     
     steps:
     - name: Checkout SG-AI-Team/search_bar
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN }}
       
 
     - name: Activate virtual environment
@@ -34,6 +39,7 @@ jobs:
         git add data/search_db
         git add data/program_parent_json.json
         git add data/school_parent_json.json
+        git add data/school_names.txt
         git diff --staged --quiet || git commit -m "Automated data pipeline update - $(date)"
         git push
       env:
