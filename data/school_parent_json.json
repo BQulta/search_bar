@@ -1,10 +1,10 @@
 {
-  "60": {
-    "school_id": 60,
-    "school_name": "ESG Nantes - GALILEO Group",
+  "55013": {
+    "school_id": 55013,
+    "school_name": "Universidad Europea",
     "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Nantes%2520%28Galileo%2520Group%29ESG-Nantes.jpg%3Falt%3Dmedia%26token%3Dbea51135-857a-4dae-b14b-21e15fa519cc",
-    "country_code": "FRANCE"
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/Universidad%20EuropeaaUniversidad-Europea.jpg?alt=media&token=55f38771-7608-4cc4-a8f7-89ddf7b87d8a",
+    "country_code": "SPAIN"
   },
   "124": {
     "school_id": 124,
@@ -13,19 +13,12 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FECAM%2520LaSalleECAM-LaSalle---%25C3%2589cole-dIng%25C3%25A9nieurs.jpg%3Falt%3Dmedia%26token%3Dbdea465c-f503-4a5c-a0fc-142b6ff290b4",
     "country_code": "FRANCE"
   },
-  "55013": {
-    "school_id": 55013,
-    "school_name": "Universidad Europea",
+  "55015": {
+    "school_id": 55015,
+    "school_name": "GBSB Global Business School",
     "rank": null,
-    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/Universidad%20EuropeaaUniversidad-Europea.jpg?alt=media&token=55f38771-7608-4cc4-a8f7-89ddf7b87d8a",
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/GBSB%20Global%20Business%20SchoolGBSB.jpg?alt=media&token=d7b4f92e-770b-4f52-bf4c-f085b6efe852",
     "country_code": "SPAIN"
-  },
-  "141": {
-    "school_id": 141,
-    "school_name": "IFA Paris - EDH Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIFA%2520Paris%2520%28EDH%2520Group%29IFA-Paris-%28EDH-Group%29.jpg%3Falt%3Dmedia%26token%3D98f5816b-4438-4d94-aa16-dd970720fedd",
-    "country_code": "FRANCE"
   },
   "40": {
     "school_id": 40,
@@ -34,12 +27,306 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FNEOMA%2520Business%2520SchoolNEOMA-Business-School.jpg%3Falt%3Dmedia%26token%3D21880353-2ddc-4144-be35-ba68adce58ef",
     "country_code": "FRANCE"
   },
-  "55015": {
-    "school_id": 55015,
-    "school_name": "GBSB Global Business School",
+  "25": {
+    "school_id": 25,
+    "school_name": "3A - FIGS Group",
     "rank": null,
-    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/GBSB%20Global%20Business%20SchoolGBSB.jpg?alt=media&token=d7b4f92e-770b-4f52-bf4c-f085b6efe852",
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEcole-3A.jpg%3Falt%3Dmedia%26token%3Db2174537-a2ab-4702-9e41-f8bec649be83",
+    "country_code": "FRANCE"
+  },
+  "28": {
+    "school_id": 28,
+    "school_name": "Sup De Com - FIGS Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSup%2520De%2520Com%2520%28FIGS%2520Group%29SUP-DE-COM.jpg%3Falt%3Dmedia%26token%3Dc30e6c31-cbc3-4197-b7fe-a0af7c0c26f2",
+    "country_code": "FRANCE"
+  },
+  "105": {
+    "school_id": 105,
+    "school_name": "INSEEC - OMNES Group",
+    "rank": 25.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FINSEEC%2520%28OMNES%2520Group%29INSEEC-OMNES-Group.jpg%3Falt%3Dmedia%26token%3D4a2a0864-0087-4a37-a8af-cbe30dbefe56",
+    "country_code": "FRANCE"
+  },
+  "116": {
+    "school_id": 116,
+    "school_name": "EPITA Engineering School",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEPITAEPITA.jpg%3Falt%3Dmedia%26token%3Dfa4fbe85-c3a4-4734-bcad-0c1b30db7be7",
+    "country_code": "FRANCE"
+  },
+  "53": {
+    "school_id": 53,
+    "school_name": "IMIS - IGENSIA Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIMIS%2520%28IGS%2520Group%29IMIS-Groupe-IGS.jpg%3Falt%3Dmedia%26token%3D57019767-cf18-4443-9a41-d924a9361777",
+    "country_code": "FRANCE"
+  },
+  "43": {
+    "school_id": 43,
+    "school_name": "ICN Business School",
+    "rank": 14.333333333333334,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FICN%2520Business%2520SchoolICN-Business-School.jpg%3Falt%3Dmedia%26token%3D89eb6312-8722-463b-aea4-a34e571a6dc9",
+    "country_code": "FRANCE"
+  },
+  "73": {
+    "school_id": 73,
+    "school_name": "ESG Immobilier (GALILEO Group)",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Immobilier%2520%28GALILEO%2520Group%29ESG-Immobilier.jpg%3Falt%3Dmedia%26token%3D39ec1152-ecf7-4ed3-aa62-349a0b17e51a",
+    "country_code": "FRANCE"
+  },
+  "49": {
+    "school_id": 49,
+    "school_name": "The American Business School - IGENSIA Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FThe%2520American%2520Business%2520School%2520%28IGS%2520Group%29American-Business-School-of-Paris.jpg%3Falt%3Dmedia%26token%3D239b1422-38bb-4c06-b48a-49eb3de432a9",
+    "country_code": "FRANCE"
+  },
+  "84": {
+    "school_id": 84,
+    "school_name": "ESARC Evolution - GALILEO Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESARC%2520Evolution%2520%28Galileo%2520Group%29ESARC.jpg%3Falt%3Dmedia%26token%3Dc435ef4a-58c8-4ce8-9a1a-590df5cd2063",
+    "country_code": "FRANCE"
+  },
+  "102": {
+    "school_id": 102,
+    "school_name": "Institut National De Gemmologie - AD Education Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FInstitut%2520National%2520de%2520Gemmologie%2520%28Groupe%2520AD%2520Education%29Institut-National-de-Gemmologie.jpg%3Falt%3Dmedia%26token%3D0a61022d-2a4c-478a-9e00-359d7a5eab9e",
+    "country_code": "FRANCE"
+  },
+  "134": {
+    "school_id": 134,
+    "school_name": "CY Tech",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FCY%2520TechCY-Tech.jpg%3Falt%3Dmedia%26token%3Dc5a2b173-3765-4bd8-a7ac-6b96055c4051",
+    "country_code": "FRANCE"
+  },
+  "19": {
+    "school_id": 19,
+    "school_name": "SKEMA Business School",
+    "rank": 5.5,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSKEMA%2520Business%2520School%2520SKEMA.jpg%3Falt%3Dmedia%26token%3D76ff0530-95a8-42d9-bfa7-664a06b4f713",
+    "country_code": "FRANCE"
+  },
+  "81": {
+    "school_id": 81,
+    "school_name": "IESA arts & Culture - GALILEO Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIESA%2520%28Galileo%2520Group%29IESA-Art-%2526-Culture.jpg%3Falt%3Dmedia%26token%3D210ab351-3289-45f9-b61c-768acc722b95",
+    "country_code": "FRANCE"
+  },
+  "11": {
+    "school_id": 11,
+    "school_name": "ISC Paris",
+    "rank": 19.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISC-Paris.jpg%3Falt%3Dmedia%26token%3De13ae865-d5ff-41fc-99f5-b341887c02e5",
+    "country_code": "FRANCE"
+  },
+  "38": {
+    "school_id": 38,
+    "school_name": "EM Strasbourg Business School",
+    "rank": 16.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEM%2520Strasbourg%2520Business%2520SchoolEM-Strasbourg-Business-School.jpg%3Falt%3Dmedia%26token%3D118f54c9-ef56-4a4c-9504-8c39b2b24b9d",
+    "country_code": "FRANCE"
+  },
+  "111": {
+    "school_id": 111,
+    "school_name": "Sup Career - OMNES Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSup%2520Career%2520%28OMNES%2520Group%29Sup-Career.jpg%3Falt%3Dmedia%26token%3D2a1137dc-d946-4832-a388-1d5cdf534efa",
+    "country_code": "FRANCE"
+  },
+  "138": {
+    "school_id": 138,
+    "school_name": "ESILV - P\u00f4le L\u00e9onard de Vinci",
+    "rank": 18.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESILV%2520ESILV.jpg%3Falt%3Dmedia%26token%3De28779f5-6557-4d7f-a6d0-2706a250e206",
+    "country_code": "FRANCE"
+  },
+  "121": {
+    "school_id": 121,
+    "school_name": "ISEP Engineering School",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISEPISEP.jpg%3Falt%3Dmedia%26token%3D19ca776b-dda1-477f-9853-b994bb9a747a",
+    "country_code": "FRANCE"
+  },
+  "33": {
+    "school_id": 33,
+    "school_name": "ESAIL - FIGS Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESAIL%2520%28FIGS%2520Group%29ESAIL.jpg%3Falt%3Dmedia%26token%3De861e7ca-48a7-4698-862c-814fd4db484e",
+    "country_code": "FRANCE"
+  },
+  "122": {
+    "school_id": 122,
+    "school_name": "BESIGN School ",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FBESIGN%2520School%2520BESIGN-School.jpg%3Falt%3Dmedia%26token%3D2104584b-e089-4987-a2d0-bf925a4f9027",
+    "country_code": "FRANCE"
+  },
+  "128": {
+    "school_id": 128,
+    "school_name": "Sup De Luxe - Planete Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSup%2520de%2520LuxeSup-de-Luxe.jpg%3Falt%3Dmedia%26token%3D5eea78c3-c31b-47f1-a0dd-32e6b22a8496",
+    "country_code": "FRANCE"
+  },
+  "67": {
+    "school_id": 67,
+    "school_name": "MBA ESG - GALILEO Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FMBA%2520ESG%2520%28Galileo%2520Group%29MBA-ESG.jpg%3Falt%3Dmedia%26token%3D046a3e30-05f2-4435-b6a5-e092d2bbd83c",
+    "country_code": "FRANCE"
+  },
+  "10": {
+    "school_id": 10,
+    "school_name": "Ecoles Ferri\u00e8res - GA Education Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%2589cole%2520Ferri%25C3%25A8resFerri%25C3%25A8res-hospitality-%2526-Luxury.jpg%3Falt%3Dmedia%26token%3D107fd34d-aef3-416c-b3dd-6ea837e2d562",
+    "country_code": "FRANCE"
+  },
+  "12": {
+    "school_id": 12,
+    "school_name": "Audencia Business School",
+    "rank": 8.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FAudencia%2520%25C3%2589cole%2520de%2520management%2520et%2520de%2520communicationAudencia-Business-School.jpg%3Falt%3Dmedia%26token%3Dc0a8eebe-e093-4913-ba47-81223521e8a8",
+    "country_code": "FRANCE"
+  },
+  "51": {
+    "school_id": 51,
+    "school_name": "ICD - IGENSIA Group",
+    "rank": 28.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FICD%2520%28IGS%2520Group%29ICD-Business-School.jpg%3Falt%3Dmedia%26token%3D0452a2a2-181e-43b6-bf43-c2093ac51884",
+    "country_code": "FRANCE"
+  },
+  "78": {
+    "school_id": 78,
+    "school_name": "Paris School Of Technology & Business - GALILEO Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FParis%2520School%2520Of%2520Technology%2520%2526%2520Business%2520%28Galileo%2520Group%29PST%2526B.jpg%3Falt%3Dmedia%26token%3D2f973064-4fb6-4f76-95f4-631012bf7317",
+    "country_code": "FRANCE"
+  },
+  "133": {
+    "school_id": 133,
+    "school_name": "ISTEC Business School",
+    "rank": 17.333333333333332,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISTEC%2520Business%2520School%2520ParisISTEC-Business-School-Paris.jpg%3Falt%3Dmedia%26token%3D884d28e5-2d84-4147-849e-67c21d76b64d",
+    "country_code": "FRANCE"
+  },
+  "119": {
+    "school_id": 119,
+    "school_name": "aivancity",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FAIVANCITYAivancity.jpg%3Falt%3Dmedia%26token%3Dce43629d-ab0f-4654-b496-1676bba020ba",
+    "country_code": "FRANCE"
+  },
+  "23": {
+    "school_id": 23,
+    "school_name": "IDRAC - FIGS Group",
+    "rank": 25.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIDRAC%2520%28FIGS%2520Group%29IDRAC.jpg%3Falt%3Dmedia%26token%3Dbbf9537d-d71f-4fb5-a3e6-863a57cbe910",
+    "country_code": "FRANCE"
+  },
+  "76": {
+    "school_id": 76,
+    "school_name": "ELIJE - GALILEO Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FELIJE%2520%28Galileo%2520Group%29Elije-%25C3%2589cole-de-Droit.jpg%3Falt%3Dmedia%26token%3D654ff51e-607e-42d0-9b97-26826b8160e0",
+    "country_code": "FRANCE"
+  },
+  "103": {
+    "school_id": 103,
+    "school_name": "Ecole de Conde - AD Education Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%2589cole%2520de%2520Cond%25C3%25A9%2520%28Groupe%2520AD%2520Education%29%25C3%2589cole-de-Cond%25C3%25A9.jpg%3Falt%3Dmedia%26token%3D67b2fb90-b9e6-4590-937f-d92f8d1900bf",
+    "country_code": "FRANCE"
+  },
+  "3": {
+    "school_id": 3,
+    "school_name": "MOPA - EDH Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%25A9cole-MoPA.jpg%3Falt%3Dmedia%26token%3D4d161869-4937-4013-aaca-282ef2de824b",
+    "country_code": "FRANCE"
+  },
+  "36": {
+    "school_id": 36,
+    "school_name": "Rennes School of Business",
+    "rank": 12.666666666666666,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FRENNES%2520Business%2520SchoolRennes-Business-School.jpg%3Falt%3Dmedia%26token%3D28bc2173-de1b-4167-9093-955b67d4135f",
+    "country_code": "FRANCE"
+  },
+  "55004": {
+    "school_id": 55004,
+    "school_name": "ESLSCA Business School - Planeta Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESLSCAESLSCA.jpg%3Falt%3Dmedia%26token%3D600c77b5-f9f1-48b9-85c5-72230778bb70",
+    "country_code": "FRANCE"
+  },
+  "7": {
+    "school_id": 7,
+    "school_name": "EFAP - EDH Group",
+    "rank": 4.0,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEFAP%2520L%25E2%2580%2599%25C3%25A9cole%2520des%2520nouveau%2520m%25C3%25A9tiers%2520de%2520la%2520communication%2520EFAP-%25C3%25A9cole-de-communication-%282%29.jpg%3Falt%3Dmedia%26token%3Dbf4d7d8a-b7d1-49ba-8527-7b6a39105386",
+    "country_code": "FRANCE"
+  },
+  "55016": {
+    "school_id": 55016,
+    "school_name": "ESIEE Paris",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/ESIEE%20ParisESIEE-Paris.jpg?alt=media&token=abf8d339-9c3b-4125-b0cf-d4893b007ea5",
+    "country_code": "FRANCE"
+  },
+  "55018": {
+    "school_id": 55018,
+    "school_name": "EADA Business School",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/EADA%20Business%20SchoolEADA-Business-School.jpg?alt=media&token=e57ea3ac-aee8-421d-8483-91267124491c",
     "country_code": "SPAIN"
+  },
+  "135": {
+    "school_id": 135,
+    "school_name": "JUNIA: HEI",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FJUNIA%2520HEI%2520JUNIA-HEI.jpg%3Falt%3Dmedia%26token%3D3747bc56-98d1-45c9-9a06-1e4d00578bc7",
+    "country_code": "FRANCE"
+  },
+  "55019": {
+    "school_id": 55019,
+    "school_name": "UK",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/UK1978964397_864791e391_b.jpg?alt=media&token=c6de76b4-88db-4070-89cb-bfcf450f6885",
+    "country_code": "SPAIN"
+  },
+  "55020": {
+    "school_id": 55020,
+    "school_name": "ESIEA",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/ESIEAESIEA.jpg?alt=media&token=0412d7e0-01bb-4267-ab48-82264825372c",
+    "country_code": "FRANCE"
+  },
+  "60": {
+    "school_id": 60,
+    "school_name": "ESG Nantes - GALILEO Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Nantes%2520%28Galileo%2520Group%29ESG-Nantes.jpg%3Falt%3Dmedia%26token%3Dbea51135-857a-4dae-b14b-21e15fa519cc",
+    "country_code": "FRANCE"
+  },
+  "55021": {
+    "school_id": 55021,
+    "school_name": "SRH University",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/SRH%20UniversitySRH-University.jpg?alt=media&token=723db771-56ce-4cf0-b963-4e8075818cfa",
+    "country_code": "GERMANY"
+  },
+  "141": {
+    "school_id": 141,
+    "school_name": "IFA Paris - EDH Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIFA%2520Paris%2520%28EDH%2520Group%29IFA-Paris-%28EDH-Group%29.jpg%3Falt%3Dmedia%26token%3D98f5816b-4438-4d94-aa16-dd970720fedd",
+    "country_code": "FRANCE"
   },
   "37": {
     "school_id": 37,
@@ -53,13 +340,6 @@
     "school_name": "Digital Campus - GALILEO Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FDigital%2520Campus%2520%28Galileo%2520Group%29Digital-Campus.jpg%3Falt%3Dmedia%26token%3De1e386da-b8a3-45e8-ba58-8cd1c885ad74",
-    "country_code": "FRANCE"
-  },
-  "25": {
-    "school_id": 25,
-    "school_name": "3A - FIGS Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEcole-3A.jpg%3Falt%3Dmedia%26token%3Db2174537-a2ab-4702-9e41-f8bec649be83",
     "country_code": "FRANCE"
   },
   "31": {
@@ -76,25 +356,18 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Strasbourg%2520%28Galileo%2520Group%29ESG-Strasbourg.jpg%3Falt%3Dmedia%26token%3D1e161827-c4e2-463f-871f-3c4c05097a00",
     "country_code": "FRANCE"
   },
+  "140": {
+    "school_id": 140,
+    "school_name": "3W Academy - EDH Group",
+    "rank": null,
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F3W%2520Academy%2520%28EDH%2520Group%293W-Academy-EDH-Group.jpg%3Falt%3Dmedia%26token%3D09a1be7f-1cba-4ca1-aca4-db46a945e683",
+    "country_code": "FRANCE"
+  },
   "20": {
     "school_id": 20,
     "school_name": "IFAG - FIGS Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIFAG%2520%28FIGS%2520Group%29IFAG.jpg%3Falt%3Dmedia%26token%3Dbb856290-f28e-4b94-9aad-3a90c246cbea",
-    "country_code": "FRANCE"
-  },
-  "28": {
-    "school_id": 28,
-    "school_name": "Sup De Com - FIGS Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSup%2520De%2520Com%2520%28FIGS%2520Group%29SUP-DE-COM.jpg%3Falt%3Dmedia%26token%3Dc30e6c31-cbc3-4197-b7fe-a0af7c0c26f2",
-    "country_code": "FRANCE"
-  },
-  "105": {
-    "school_id": 105,
-    "school_name": "INSEEC - OMNES Group",
-    "rank": 25.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FINSEEC%2520%28OMNES%2520Group%29INSEEC-OMNES-Group.jpg%3Falt%3Dmedia%26token%3D4a2a0864-0087-4a37-a8af-cbe30dbefe56",
     "country_code": "FRANCE"
   },
   "99": {
@@ -132,13 +405,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESSCA-Business-School.jpg%3Falt%3Dmedia%26token%3Da8f5bfb0-ff51-439d-a21c-eebda5d7cca4",
     "country_code": "FRANCE"
   },
-  "116": {
-    "school_id": 116,
-    "school_name": "EPITA Engineering School",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEPITAEPITA.jpg%3Falt%3Dmedia%26token%3Dfa4fbe85-c3a4-4734-bcad-0c1b30db7be7",
-    "country_code": "FRANCE"
-  },
   "109": {
     "school_id": 109,
     "school_name": "Sup de Pub - OMNES Group",
@@ -151,13 +417,6 @@
     "school_name": "ESG ACT (GALILEO Group)",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520ACT%2520%28GALILEO%2520Luxe%29ESG-ACT.jpg%3Falt%3Dmedia%26token%3D83cd5541-a10d-4434-9b9f-77f9fb15016a",
-    "country_code": "FRANCE"
-  },
-  "53": {
-    "school_id": 53,
-    "school_name": "IMIS - IGENSIA Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIMIS%2520%28IGS%2520Group%29IMIS-Groupe-IGS.jpg%3Falt%3Dmedia%26token%3D57019767-cf18-4443-9a41-d924a9361777",
     "country_code": "FRANCE"
   },
   "126": {
@@ -181,13 +440,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Rennes%2520%28Galileo%2520Group%29ESG-Rennes.jpg%3Falt%3Dmedia%26token%3D58789c6d-d1e2-4a19-97cc-989e71b54ebd",
     "country_code": "FRANCE"
   },
-  "43": {
-    "school_id": 43,
-    "school_name": "ICN Business School",
-    "rank": 14.333333333333334,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FICN%2520Business%2520SchoolICN-Business-School.jpg%3Falt%3Dmedia%26token%3D89eb6312-8722-463b-aea4-a34e571a6dc9",
-    "country_code": "FRANCE"
-  },
   "24": {
     "school_id": 24,
     "school_name": "ILERI - FIGS Group",
@@ -202,25 +454,11 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FLISAA%2520%28Galileo%2520Group%29LISAA.jpg%3Falt%3Dmedia%26token%3D7b5c9273-5b1d-4985-836c-241ed642c45f",
     "country_code": "FRANCE"
   },
-  "73": {
-    "school_id": 73,
-    "school_name": "ESG Immobilier (GALILEO Group)",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Immobilier%2520%28GALILEO%2520Group%29ESG-Immobilier.jpg%3Falt%3Dmedia%26token%3D39ec1152-ecf7-4ed3-aa62-349a0b17e51a",
-    "country_code": "FRANCE"
-  },
   "63": {
     "school_id": 63,
     "school_name": "ESG Lyon - GALILEO Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520Lyon%2520%28Galileo%2520Group%29ESG-Lyon.jpg%3Falt%3Dmedia%26token%3Dab90224d-8721-40be-81f5-2ed868ca0b2f",
-    "country_code": "FRANCE"
-  },
-  "49": {
-    "school_id": 49,
-    "school_name": "The American Business School - IGENSIA Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FThe%2520American%2520Business%2520School%2520%28IGS%2520Group%29American-Business-School-of-Paris.jpg%3Falt%3Dmedia%26token%3D239b1422-38bb-4c06-b48a-49eb3de432a9",
     "country_code": "FRANCE"
   },
   "113": {
@@ -258,13 +496,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIPAG%2520Business%2520SchoolIPAG-Business-School.jpg%3Falt%3Dmedia%26token%3Dc765379d-1db0-4a8d-bab6-d88535339298",
     "country_code": "FRANCE"
   },
-  "84": {
-    "school_id": 84,
-    "school_name": "ESARC Evolution - GALILEO Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESARC%2520Evolution%2520%28Galileo%2520Group%29ESARC.jpg%3Falt%3Dmedia%26token%3Dc435ef4a-58c8-4ce8-9a1a-590df5cd2063",
-    "country_code": "FRANCE"
-  },
   "41": {
     "school_id": 41,
     "school_name": "Toulouse Business School",
@@ -277,13 +508,6 @@
     "school_name": "Institut Culinaire de France - GALILEO Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FInstitut%2520Culinaire%2520de%2520France%2520%28Galileo%2520Group%29Institut-Culinaire-de-France.jpg%3Falt%3Dmedia%26token%3D4b88d2d1-b3a7-4995-8f2f-2124ea3d4787",
-    "country_code": "FRANCE"
-  },
-  "102": {
-    "school_id": 102,
-    "school_name": "Institut National De Gemmologie - AD Education Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FInstitut%2520National%2520de%2520Gemmologie%2520%28Groupe%2520AD%2520Education%29Institut-National-de-Gemmologie.jpg%3Falt%3Dmedia%26token%3D0a61022d-2a4c-478a-9e00-359d7a5eab9e",
     "country_code": "FRANCE"
   },
   "26": {
@@ -307,13 +531,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISCPA%2520%28IGC%2520Group%29ISCPA.jpg%3Falt%3Dmedia%26token%3D7cb3677d-c7d3-4d1d-948f-372693735c61",
     "country_code": "FRANCE"
   },
-  "140": {
-    "school_id": 140,
-    "school_name": "3W Academy - EDH Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F3W%2520Academy%2520%28EDH%2520Group%293W-Academy-EDH-Group.jpg%3Falt%3Dmedia%26token%3D09a1be7f-1cba-4ca1-aca4-db46a945e683",
-    "country_code": "FRANCE"
-  },
   "79": {
     "school_id": 79,
     "school_name": "Strate School of Design - GALILEO Group",
@@ -328,25 +545,11 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEAC%2520%28Groupe%2520AD%2520Education%29%25C3%2589cole-EAC.jpg%3Falt%3Dmedia%26token%3D994f77d7-e2f1-451e-85a8-add6ed38c21c",
     "country_code": "FRANCE"
   },
-  "134": {
-    "school_id": 134,
-    "school_name": "CY Tech",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FCY%2520TechCY-Tech.jpg%3Falt%3Dmedia%26token%3Dc5a2b173-3765-4bd8-a7ac-6b96055c4051",
-    "country_code": "FRANCE"
-  },
   "120": {
     "school_id": 120,
     "school_name": "EDC Business School",
     "rank": 24.0,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEDC%2520Paris%2520Business%2520SchoolEDC-Paris-Business-School.jpg%3Falt%3Dmedia%26token%3D30b4b7c0-64d8-4e58-8127-70a254da6966",
-    "country_code": "FRANCE"
-  },
-  "19": {
-    "school_id": 19,
-    "school_name": "SKEMA Business School",
-    "rank": 5.5,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSKEMA%2520Business%2520School%2520SKEMA.jpg%3Falt%3Dmedia%26token%3D76ff0530-95a8-42d9-bfa7-664a06b4f713",
     "country_code": "FRANCE"
   },
   "8": {
@@ -391,13 +594,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2Fnull%25C3%2589cole-Bleue-Global-Design.jpg%3Falt%3Dmedia%26token%3De7fa5ea2-7507-4c41-8552-9e87698710ec",
     "country_code": "FRANCE"
   },
-  "81": {
-    "school_id": 81,
-    "school_name": "IESA arts & Culture - GALILEO Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIESA%2520%28Galileo%2520Group%29IESA-Art-%2526-Culture.jpg%3Falt%3Dmedia%26token%3D210ab351-3289-45f9-b61c-768acc722b95",
-    "country_code": "FRANCE"
-  },
   "65": {
     "school_id": 65,
     "school_name": "ESG Montpellier - GALILEO Group",
@@ -410,13 +606,6 @@
     "school_name": "Atelier De S\u00e8vres - GALILEO Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FAtelier%2520De%2520S%25C3%25A8vres%2520%28Galileo%2520Group%29Atelier-de-S%25C3%25A8vres.jpg%3Falt%3Dmedia%26token%3D94bd9670-d196-47aa-b057-d62f6a1fcaa5",
-    "country_code": "FRANCE"
-  },
-  "11": {
-    "school_id": 11,
-    "school_name": "ISC Paris",
-    "rank": 19.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISC-Paris.jpg%3Falt%3Dmedia%26token%3De13ae865-d5ff-41fc-99f5-b341887c02e5",
     "country_code": "FRANCE"
   },
   "88": {
@@ -438,13 +627,6 @@
     "school_name": "ESG Finance - GALILEO Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESG%2520FINANCE%2520%28GALILEO%2520Group%29ESG-Finance.jpg%3Falt%3Dmedia%26token%3D8c359d51-3009-4fcb-ad54-56fea6e178d9",
-    "country_code": "FRANCE"
-  },
-  "38": {
-    "school_id": 38,
-    "school_name": "EM Strasbourg Business School",
-    "rank": 16.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEM%2520Strasbourg%2520Business%2520SchoolEM-Strasbourg-Business-School.jpg%3Falt%3Dmedia%26token%3D118f54c9-ef56-4a4c-9504-8c39b2b24b9d",
     "country_code": "FRANCE"
   },
   "9": {
@@ -545,13 +727,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESMD%2520%28FIGS%2520Group%29ESMD.jpg%3Falt%3Dmedia%26token%3D560bbe5d-e900-444f-ab85-b7bc71a2ae02",
     "country_code": "FRANCE"
   },
-  "111": {
-    "school_id": 111,
-    "school_name": "Sup Career - OMNES Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSup%2520Career%2520%28OMNES%2520Group%29Sup-Career.jpg%3Falt%3Dmedia%26token%3D2a1137dc-d946-4832-a388-1d5cdf534efa",
-    "country_code": "FRANCE"
-  },
   "108": {
     "school_id": 108,
     "school_name": "International University of Monaco - OMNES Group",
@@ -566,95 +741,11 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FFERRANDI%2520ParisFERRANDI-Paris.jpg%3Falt%3Dmedia%26token%3D28d9f6d2-7541-4401-a953-bba77fd77435",
     "country_code": "FRANCE"
   },
-  "138": {
-    "school_id": 138,
-    "school_name": "ESILV - P\u00f4le L\u00e9onard de Vinci",
-    "rank": 18.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESILV%2520ESILV.jpg%3Falt%3Dmedia%26token%3De28779f5-6557-4d7f-a6d0-2706a250e206",
-    "country_code": "FRANCE"
-  },
-  "121": {
-    "school_id": 121,
-    "school_name": "ISEP Engineering School",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISEPISEP.jpg%3Falt%3Dmedia%26token%3D19ca776b-dda1-477f-9853-b994bb9a747a",
-    "country_code": "FRANCE"
-  },
   "129": {
     "school_id": 129,
     "school_name": "Ecole 89 - GA Education Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%2589cole%252089%2520%28GA%25C3%2589DUCATION%29%25C3%2589cole-89.jpg%3Falt%3Dmedia%26token%3D0c0f9349-7c96-416f-ad97-35d32aba76a5",
-    "country_code": "FRANCE"
-  },
-  "33": {
-    "school_id": 33,
-    "school_name": "ESAIL - FIGS Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESAIL%2520%28FIGS%2520Group%29ESAIL.jpg%3Falt%3Dmedia%26token%3De861e7ca-48a7-4698-862c-814fd4db484e",
-    "country_code": "FRANCE"
-  },
-  "122": {
-    "school_id": 122,
-    "school_name": "BESIGN School ",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FBESIGN%2520School%2520BESIGN-School.jpg%3Falt%3Dmedia%26token%3D2104584b-e089-4987-a2d0-bf925a4f9027",
-    "country_code": "FRANCE"
-  },
-  "128": {
-    "school_id": 128,
-    "school_name": "Sup De Luxe - Planete Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FSup%2520de%2520LuxeSup-de-Luxe.jpg%3Falt%3Dmedia%26token%3D5eea78c3-c31b-47f1-a0dd-32e6b22a8496",
-    "country_code": "FRANCE"
-  },
-  "67": {
-    "school_id": 67,
-    "school_name": "MBA ESG - GALILEO Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FMBA%2520ESG%2520%28Galileo%2520Group%29MBA-ESG.jpg%3Falt%3Dmedia%26token%3D046a3e30-05f2-4435-b6a5-e092d2bbd83c",
-    "country_code": "FRANCE"
-  },
-  "10": {
-    "school_id": 10,
-    "school_name": "Ecoles Ferri\u00e8res - GA Education Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%2589cole%2520Ferri%25C3%25A8resFerri%25C3%25A8res-hospitality-%2526-Luxury.jpg%3Falt%3Dmedia%26token%3D107fd34d-aef3-416c-b3dd-6ea837e2d562",
-    "country_code": "FRANCE"
-  },
-  "12": {
-    "school_id": 12,
-    "school_name": "Audencia Business School",
-    "rank": 8.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FAudencia%2520%25C3%2589cole%2520de%2520management%2520et%2520de%2520communicationAudencia-Business-School.jpg%3Falt%3Dmedia%26token%3Dc0a8eebe-e093-4913-ba47-81223521e8a8",
-    "country_code": "FRANCE"
-  },
-  "48": {
-    "school_id": 48,
-    "school_name": "IGS RH - IGENSIA Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIGS-RH%2520%28IGS%2520Group%29IGS-RH-school.jpg%3Falt%3Dmedia%26token%3Dd06ffd6e-ed04-48e9-ac63-8e9de35ca662",
-    "country_code": "FRANCE"
-  },
-  "51": {
-    "school_id": 51,
-    "school_name": "ICD - IGENSIA Group",
-    "rank": 28.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FICD%2520%28IGS%2520Group%29ICD-Business-School.jpg%3Falt%3Dmedia%26token%3D0452a2a2-181e-43b6-bf43-c2093ac51884",
-    "country_code": "FRANCE"
-  },
-  "78": {
-    "school_id": 78,
-    "school_name": "Paris School Of Technology & Business - GALILEO Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FParis%2520School%2520Of%2520Technology%2520%2526%2520Business%2520%28Galileo%2520Group%29PST%2526B.jpg%3Falt%3Dmedia%26token%3D2f973064-4fb6-4f76-95f4-631012bf7317",
-    "country_code": "FRANCE"
-  },
-  "133": {
-    "school_id": 133,
-    "school_name": "ISTEC Business School",
-    "rank": 17.333333333333332,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FISTEC%2520Business%2520School%2520ParisISTEC-Business-School-Paris.jpg%3Falt%3Dmedia%26token%3D884d28e5-2d84-4147-849e-67c21d76b64d",
     "country_code": "FRANCE"
   },
   "137": {
@@ -741,32 +832,11 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIPSAIPSA.jpg%3Falt%3Dmedia%26token%3D8eef99b6-a7f5-494a-8693-5a7727e25cb7",
     "country_code": "FRANCE"
   },
-  "119": {
-    "school_id": 119,
-    "school_name": "aivancity",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FAIVANCITYAivancity.jpg%3Falt%3Dmedia%26token%3Dce43629d-ab0f-4654-b496-1676bba020ba",
-    "country_code": "FRANCE"
-  },
   "54": {
     "school_id": 54,
     "school_name": "Paris School of Business",
     "rank": 26.0,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FParis%2520School%2520of%2520BusinessPSB.jpg%3Falt%3Dmedia%26token%3Dad42f474-73eb-47af-af90-b635722a10bc",
-    "country_code": "FRANCE"
-  },
-  "23": {
-    "school_id": 23,
-    "school_name": "IDRAC - FIGS Group",
-    "rank": 25.0,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIDRAC%2520%28FIGS%2520Group%29IDRAC.jpg%3Falt%3Dmedia%26token%3Dbbf9537d-d71f-4fb5-a3e6-863a57cbe910",
-    "country_code": "FRANCE"
-  },
-  "76": {
-    "school_id": 76,
-    "school_name": "ELIJE - GALILEO Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FELIJE%2520%28Galileo%2520Group%29Elije-%25C3%2589cole-de-Droit.jpg%3Falt%3Dmedia%26token%3D654ff51e-607e-42d0-9b97-26826b8160e0",
     "country_code": "FRANCE"
   },
   "95": {
@@ -781,20 +851,6 @@
     "school_name": "PENNINGHEN - GALILEO Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FPENNINGHEN%2520%28Galileo%2520Group%29Penninghen.jpg%3Falt%3Dmedia%26token%3D2ea2ebce-b794-461f-8655-311e707f7d8d",
-    "country_code": "FRANCE"
-  },
-  "103": {
-    "school_id": 103,
-    "school_name": "Ecole de Conde - AD Education Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%2589cole%2520de%2520Cond%25C3%25A9%2520%28Groupe%2520AD%2520Education%29%25C3%2589cole-de-Cond%25C3%25A9.jpg%3Falt%3Dmedia%26token%3D67b2fb90-b9e6-4590-937f-d92f8d1900bf",
-    "country_code": "FRANCE"
-  },
-  "3": {
-    "school_id": 3,
-    "school_name": "MOPA - EDH Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2F%25C3%25A9cole-MoPA.jpg%3Falt%3Dmedia%26token%3D4d161869-4937-4013-aaca-282ef2de824b",
     "country_code": "FRANCE"
   },
   "70": {
@@ -823,13 +879,6 @@
     "school_name": "HEIP - OMNES Group",
     "rank": null,
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FHEIP%2520%28OMNES%2520Group%29HEIP-OMNES-Education.jpg%3Falt%3Dmedia%26token%3D1028d043-4dc9-4080-b2ca-a2ffdd0de0bb",
-    "country_code": "FRANCE"
-  },
-  "36": {
-    "school_id": 36,
-    "school_name": "Rennes School of Business",
-    "rank": 12.666666666666666,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FRENNES%2520Business%2520SchoolRennes-Business-School.jpg%3Falt%3Dmedia%26token%3D28bc2173-de1b-4167-9093-955b67d4135f",
     "country_code": "FRANCE"
   },
   "58": {
@@ -867,13 +916,6 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESCE%2520International%2520Business%2520School%2520%28OMNES%2520Group%29ESCE-International-Business.jpg%3Falt%3Dmedia%26token%3D3462de03-b773-49c1-b31e-d93fd973af73",
     "country_code": "FRANCE"
   },
-  "55004": {
-    "school_id": 55004,
-    "school_name": "ESLSCA Business School - Planeta Group",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FESLSCAESLSCA.jpg%3Falt%3Dmedia%26token%3D600c77b5-f9f1-48b9-85c5-72230778bb70",
-    "country_code": "FRANCE"
-  },
   "90": {
     "school_id": 90,
     "school_name": "HETIC - GALILEO Group",
@@ -888,47 +930,40 @@
     "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FBRASSART%2520%25C3%2589cole%2520des%2520M%25C3%25A9tiers%2520de%2520la%2520Cr%25C3%25A9ation%25C3%2589cole-Brassart.jpg%3Falt%3Dmedia%26token%3D54aef293-28b4-4557-9116-2c5f945c3d12",
     "country_code": "FRANCE"
   },
-  "7": {
-    "school_id": 7,
-    "school_name": "EFAP - EDH Group",
+  "55022": {
+    "school_id": 55022,
+    "school_name": "Munich University of Digital Technologies & Applied Sciences (MUDT)",
     "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FEFAP%2520L%25E2%2580%2599%25C3%25A9cole%2520des%2520nouveau%2520m%25C3%25A9tiers%2520de%2520la%2520communication%2520EFAP-%25C3%25A9cole-de-communication-%282%29.jpg%3Falt%3Dmedia%26token%3Dbf4d7d8a-b7d1-49ba-8527-7b6a39105386",
-    "country_code": "FRANCE"
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/Munich%20University%20of%20Digital%20Technologies%20%26%20Applied%20Sciences%20(MUDT)MUDT.jpg?alt=media&token=1120963d-a336-4044-b1b5-808a03bc6e1c",
+    "country_code": "GERMANY"
   },
-  "55016": {
-    "school_id": 55016,
-    "school_name": "ESIEE Paris",
+  "55023": {
+    "school_id": 55023,
+    "school_name": "UCAM Universidad",
     "rank": null,
-    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/ESIEE%20ParisESIEE-Paris.jpg?alt=media&token=abf8d339-9c3b-4125-b0cf-d4893b007ea5",
-    "country_code": "FRANCE"
-  },
-  "135": {
-    "school_id": 135,
-    "school_name": "JUNIA: HEI",
-    "rank": null,
-    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FJUNIA%2520HEI%2520JUNIA-HEI.jpg%3Falt%3Dmedia%26token%3D3747bc56-98d1-45c9-9a06-1e4d00578bc7",
-    "country_code": "FRANCE"
-  },
-  "55018": {
-    "school_id": 55018,
-    "school_name": "EADA Business School",
-    "rank": null,
-    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/EADA%20Business%20SchoolEADA-Business-School.jpg?alt=media&token=e57ea3ac-aee8-421d-8483-91267124491c",
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/UCAM%20UniversidadUCAM-Universidad.jpg?alt=media&token=d0e12488-2d1d-47be-869f-9ee9def24b53",
     "country_code": "SPAIN"
   },
-  "55019": {
-    "school_id": 55019,
-    "school_name": "UK",
+  "48": {
+    "school_id": 48,
+    "school_name": "IGENSIA RH ",
     "rank": null,
-    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/UK1978964397_864791e391_b.jpg?alt=media&token=c6de76b4-88db-4070-89cb-bfcf450f6885",
-    "country_code": "SPAIN"
-  },
-  "55020": {
-    "school_id": 55020,
-    "school_name": "ESIEA",
-    "rank": null,
-    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/ESIEAESIEA.jpg?alt=media&token=0412d7e0-01bb-4267-ab48-82264825372c",
+    "school_logo": "https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fmain-byte-304814.appspot.com%2Fo%2FIGS-RH%2520%28IGS%2520Group%29IGS-RH-school.jpg%3Falt%3Dmedia%26token%3Dd06ffd6e-ed04-48e9-ac63-8e9de35ca662",
     "country_code": "FRANCE"
+  },
+  "55028": {
+    "school_id": 55028,
+    "school_name": "ECV - AD Education Group",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/ECV%20-%20AD%20Education%20GroupECV.jpg?alt=media&token=e765cb8a-9d5e-4146-bf3d-295320763ebc",
+    "country_code": "FRANCE"
+  },
+  "55029": {
+    "school_id": 55029,
+    "school_name": "Campus Spain",
+    "rank": null,
+    "school_logo": "https://firebasestorage.googleapis.com/v0/b/main-byte-304814.appspot.com/o/Campus%20SpainCampus-Spain.jpg?alt=media&token=e61bfb06-5c87-4a6c-822e-ba7ae85ab159",
+    "country_code": "SPAIN"
   },
   "2": {
     "school_id": 2,
