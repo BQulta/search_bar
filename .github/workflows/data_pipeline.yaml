@@ -39,6 +39,7 @@ jobs:
         git add data/search_db
         git add data/program_parent_json.json
         git add data/school_parent_json.json
+        git add data/school_names.txt
         git diff --staged --quiet || git commit -m "Automated data pipeline update - $(date)"
         git push
       env:
